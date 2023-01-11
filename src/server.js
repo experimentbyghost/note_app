@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-
+const PORT = process.env.PORT || 5000;
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}))
@@ -22,7 +22,7 @@ mongoose.connect("mongodb+srv://notes_app123:cPzqS086oitbLiGN@cluster0.zpvfxfw.m
 
 })
 
-const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, function(){
     console.log("server started on port", PORT);
 })

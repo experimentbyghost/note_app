@@ -16,7 +16,10 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
 mongoose.connect("mongodb+srv://notes_app123:cPzqS086oitbLiGN@cluster0.zpvfxfw.mongodb.net/?retryWrites=true&w=majority").then(function(){
-
+    
+    app.use("/", function(req, res){
+        req.send("hello");
+    });
     const noteRouter = require("./src/routes/noteRoutes");
     app.use("/notes", noteRouter);
 

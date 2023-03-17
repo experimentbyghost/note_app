@@ -11,10 +11,10 @@ router.post("/list/", async function(req, res){
     res.json(notes) 
 })
 
-// router.get("/list/:userid", async function(req, res){
-//     var notes = await Note.find({userid: req.params.userid})
-//     res.json(notes) 
-// })
+router.get("/list/:userid", async function(req, res){
+    var notes = await Note.find({userid: req.params.userid})
+    res.json(notes) 
+})
 
 router.post("/add", async function(req, res){
     res.json(req.body)
